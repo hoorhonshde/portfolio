@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Үүрийнбаяр — Вэб Хөгжүүлэгч</title>
+  <!-- #2. Жинхэнэ фонтууд (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="logo">Uuriinbayar.MN</a>
+    <div class="nav-links">
+      <a href="#work">Ажлууд</a>
+      <a href="#about">Тухай</a>
+      <a href="#contact">Холбогдох</a>
+      <!-- #5. Эможи биш жинхэнэ SVG Icon -->
+      <button id="theme-btn" aria-label="Горим солих">
+        <svg id="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg id="sun-icon" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- #7. Тодорхой, хүчтэй гарчиг (Specific headline) -->
+    <section class="hero">
+      <p class="eyebrow">УЛААНБААТАР — ФРОНТЭНД ХӨГЖҮҮЛЭГЧ</p>
+      <h1>Хурдан ажиллагаатай, илүүц чимэггүй вэб системүүд бүтээнэ.</h1>
+      <p class="lead">
+        Би бизнес болон хувь хүмүүст зориулсан ойлгомжтой, хурдтай вэб интерфэйсийг цэвэр HTML, CSS болон JavaScript дээр хөгжүүлдэг.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">Сонгомол ажлууд</a>
+        <a href="#contact" class="btn-secondary">Санал илгээх</a>
+      </div>
+    </section>
+
+    <!-- #4. 3 карт зэрэгцүүлэх загварыг эвдсэн жагсаалт (Break the 3-card row) -->
+    <section id="work" class="work-section">
+      <div class="section-top">
+        <h2>Миний Бүтээсэн Төсөл</h2>
+        <span class="count">2026</span>
+      </div>
+
+      <!-- Ганц том, бодит төслийн харагдац -->
+      <article class="featured-project">
+        <div class="project-info">
+          <div class="project-header">
+            <span class="project-num">01 / ОНЦЛОХ ТӨСӨЛ</span>
+            <span class="tech-label">JavaScript • Fetch API • Weather API</span>
+          </div>
+          <h3>Цаг Агаар Шалгах Вэб Апп</h3>
+          <p class="project-desc">
+            Хэрэглэгч дурын хотын нэрийг бичиж оруулахад үнэгүй Weather API ашиглан тухайн хотын бодит цагийн температур, цаг агаарын төлөвийг татаж харуулдаг вэб аппликейшн.
+          </p>
+          <ul class="feature-points">
+            <li>Гадаад API-аас өгөгдөл татах (Asynchronous Fetch)</li>
+            <li>Хотын нэрээр хайлт хийх болон алдаа шалгах логик</li>
+            <li>Цэвэр, ойлгомжтой хэрэглэгчийн интерфэйс</li>
+          </ul>
+          <button id="open-weather-preview" class="btn-primary">Ажиллах зарчмыг харах</button>
+        </div>
+
+        <!-- Төслийн бодит дэлгэцийн загвар (Real Screen) -->
+        <div class="project-screen">
+          <div class="browser-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="url-text">weather-app.local</span>
+          </div>
+          <div class="weather-mockup">
+            <div class="mock-search">Ulaanbaatar</div>
+            <div class="mock-temp">-14°C</div>
+            <div class="mock-status">Цэлмэг • Салхи 3 м/с</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Хоёр баганатай танилцуулга ба ур чадвар -->
+    <section id="about" class="about-grid">
+      <div>
+        <h2>Миний тухай</h2>
+        <p>
+          Би код бичихдээ илүүц хүндрэлгүй, хэрэглэгчид шууд ойлгомжтой шийдэл гаргахыг чухалчилдаг. Одоогоор JavaScript болон Python хэл дээр бодит төслүүд хөгжүүлж байна.
+        </p>
+      </div>
+      <div>
+        <h2>Ашигладаг технологи</h2>
+        <ul class="clean-list">
+          <li>Semantic HTML5 & Modern CSS</li>
+          <li>JavaScript (ES6+, DOM, Fetch API)</li>
+          <li>Python & Алгоритм</li>
+          <li>Git & VS Code</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer id="contact" class="footer">
+      <h2>Хамтарч ажиллахад бэлэн.</h2>
+      <p>Шинэ төсөл эсвэл ажлын санал байвал имэйл илгээнэ үү.</p>
+      <a href="mailto:temuulen@example.com" class="btn-primary">SWE2561089@muls.edu.mn</a>
+    </footer>
+  </main>
+
+  <!-- #6. Төслийн дэлгэц харуулах цонх (Modal) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Төслийн нэр</h3>
+        <button id="close-modal" aria-label="Хаах">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="screen-preview" id="modal-screen">
+        <!-- JS-ээр бодит интерфэйсийн загвар зурагдана -->
+      </div>
+      <p id="modal-desc" class="modal-desc"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+:root {
+  --bg: #faf9f6;          /* Дулаан цаасан цагаан */
+  --surface: #f1efe9;     /* Зөөлөн саарал дэвсгэр */
+  --text: #141413;        /* Гүн хар бэх */
+  --muted: #5c5b57;       /* Саарал бичвэр */
+  --accent: #e84e1b;      /* Тод улбар шар (AI-ийн нил ягаан биш) */
+  --border: #dfddd6;
+}
+
+body.dark {
+  --bg: #111110;
+  --surface: #1b1b19;
+  --text: #f4f3ef;
+  --muted: #9e9d97;
+  --accent: #ff6333;
+  --border: #2c2c29;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Syne', sans-serif;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+#theme-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Hero */
+.hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  max-width: 780px;
+}
+
+.lead {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 13px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 13px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text);
+}
+
+/* Project List (3-card row-ийг эвдсэн жагсаалт) */
+.work-section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+
+.count {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Ганц онцлох төслийн загвар */
+.featured-project {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.project-info h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.project-desc {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.feature-points {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.feature-points li {
+  font-size: 14px;
+  color: var(--text);
+  padding: 6px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.feature-points li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Төслийн дэлгэцийн хүрээ */
+.project-screen {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.browser-bar {
+  background-color: var(--surface);
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border);
+}
+
+.url-text {
+  margin-left: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  font-family: monospace;
+}
+
+.weather-mockup {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.mock-search {
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.mock-temp {
+  font-family: 'Syne', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.mock-status {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.project-num {
+  font-family: 'Syne', sans-serif;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+
+
+.tech-label {
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* About 2-column */
+.about-grid {
+  padding: 64px 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-grid h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.about-grid p {
+  color: var(--muted);
+}
+
+.clean-list {
+  list-style: none;
+}
+
+.clean-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+
+/* Footer */
+.footer {
+  padding: 72px 0;
+}
+
+.footer h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* Modal (Төслийн дэлгэц харах цонх) */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-width: 560px;
+  width: 100%;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#close-modal {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.screen-preview {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 16px;
+  font-family: monospace;
+}
+
+.modal-desc {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+@media (max-width: 650px) {
+  .project-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
